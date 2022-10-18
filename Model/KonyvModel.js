@@ -2,24 +2,34 @@ class KonyvModel {
     #konyvekTomb = [];
 
     constructor() {
-        console.log("KonyvModel");
+        // console.log("KonyvModel");
     }
 
-    adatBe(vegpont, myCallBack) {
-        fetch(vegpont, {
+    adatModosit(adat)
+    {
+        console.log("Modelben módosít",adat);
+    }
+
+    adatBe(vegpont, myCallBack) 
+    {
+        fetch(vegpont, 
+        {
             method: 'GET',
-            headers: {
+            headers: 
+            {
                 'Content-Type': 'application/json',
             }
         })
             .then((response) => response.json())
-            .then((data) => {
+            .then((data) => 
+            {
                 console.log('Success:', data);
                 this.#konyvekTomb = data.konyv;
                 console.log(this.#konyvekTomb);
                 myCallBack(this.#konyvekTomb);
             })
-            .catch((error) => {
+            .catch((error) => 
+            {
                 console.error('Error:', error);
             });
     }

@@ -1,16 +1,36 @@
 import KonyvekView from "../View/KonyvekView.js";
 import KonyvModel from "../Model/KonyvModel.js";
+import KonyvekPublicView from "../View/KonyvekPublicView.js";
 
 class KonyvController {
-    constructor() {
-        console.log("KonyvController");
-        new KonyvekView();
-        const konyvmodel = new KonyvModel();
-        konyvmodel.adatBe("../adat.json", this.konyvAdatok);
+    constructor() 
+    {
+        const konyvModel = new KonyvModel();
+        $("#admin").on("click", ()=>{
+            konyvModel.adatBe("./adat.json", this.konyvAdatok);
+        });
+
+        $("#public").on("click", ()=>{
+            konyvModel.adatBe("./adat.json", this.konyvPublicAdatok);
+        })
+
+        $(window).on("modosit", (event)=>
+        {
+            console.log("controllerben módosít", event.detail);
+            konyvModel.adatModosit(event.detail);
+        });
+    }
+    
+    konyvAdatok(tomb) 
+    {
+        const szuloElem=$("main")
+        new KonyvekView(tomb, szuloElem);
     }
 
-    konyvAdatok(tomb) {
-        console.log(tomb);
+    konyvPublicAdatok(tomb) 
+    {
+        const szuloElem=$("main")
+        new KonyvekPublicView(tomb, szuloElem);
     }
 }
 

@@ -1,17 +1,27 @@
 import KonyvView from "./KonyvView.js";
 
-class KonyvekView {
-    constructor(tomb, szuloElem) {
-        szuloElem.append(`<table><tr>
-        <td>ID</td>
-        <td>Cím</td>
-        <td>Szerző</td>
-        <td>Ár</td>
-        </tr></table>`);
-        this.tabla = szuloElem.children("table:last-child");
+class KonyvekView 
+{
+    constructor(tomb, szuloElem) 
+    {
+        szuloElem.append(`<table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Cím</th>
+                <th>Szerző</th>
+                <th>Ár</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        </table>`);
+        this.tablaElem = szuloElem.children("table:last-child");
+        this.tbodyElem = this.tablaElem.children("tbody");
 
-        tomb.forEach(konyv => {
-            const konyv = new KonyvView();
+        tomb.forEach(konyv => 
+        {
+            const konyvem = new KonyvView(konyv, this.tbodyElem);
         });
     }
 }
