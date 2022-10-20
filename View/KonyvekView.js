@@ -4,7 +4,7 @@ class KonyvekView
 {
     constructor(tomb, szuloElem) 
     {
-        szuloElem.append(`<table>
+        szuloElem.html(`<table>
         <thead>
             <tr>
                 <th>ID</th>

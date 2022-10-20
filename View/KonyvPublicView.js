@@ -5,7 +5,7 @@ class KonyvPublicView
     {
         console.log("KonvyPublicView");
         this.#elem=elem
-        szuloElem.html(`
+        szuloElem.append(`
         <div class="konyvAdatok">
             <h1>Könyv cím: ${elem.cim}</h1>
             <div>
