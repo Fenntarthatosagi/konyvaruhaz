@@ -2,7 +2,11 @@ class KosarView
 {
     constructor(tomb, szuloElem)
     {
-        
+        // while (tomb.length>0)
+        // {
+
+        //     tomb.pop();
+        // }
         tomb.forEach(elem => 
         {
             szuloElem.append(`

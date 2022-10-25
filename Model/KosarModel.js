@@ -17,6 +17,11 @@ class KosarModel
         this.#kosarTomb.push(elem);
         console.log(this.#kosarTomb);
     }
+
+    tombTorol()
+    {
+        this.#kosarTomb.pop();
+    }
 }
 
 export default KosarModel;
