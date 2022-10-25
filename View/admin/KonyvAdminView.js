@@ -1,4 +1,4 @@
-class KonyvView 
+class KonyvAdminView 
 {
     #elem;
     constructor(elem, szuloElem) 
@@ -20,11 +20,11 @@ class KonyvView
 
         this.modositElem.on("click", ()=>{
             console.log("Módosít a view-ban");
-            this.kattintasTrigger(this.modositElem);
+            this.kattintasTrigger("modosit");
         });
         this.torolElem.on("click", ()=>{
             console.log("Töröl a view-ban");
-            this.kattintasTrigger(this.torolElem);
+            this.kattintasTrigger("torol");
         })
     }
 
@@ -36,4 +36,4 @@ class KonyvView
     }
 }
 
-export default KonyvView;
+export default KonyvAdminView;

@@ -1,6 +1,6 @@
-import KonyvView from "./KonyvView.js";
+import KonyvAdminView from "./KonyvAdminView.js";
 
-class KonyvekView 
+class KonyvekAdminView 
 {
     constructor(tomb, szuloElem) 
     {
@@ -21,9 +21,9 @@ class KonyvekView
 
         tomb.forEach(konyv => 
         {
-            const konyvem = new KonyvView(konyv, this.tbodyElem);
+            const konyvem = new KonyvAdminView(konyv, this.tbodyElem);
         });
     }
 }
 
-export default KonyvekView;
+export default KonyvekAdminView;

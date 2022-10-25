@@ -1,10 +1,10 @@
-import KonyvPublicView from "./KonyvPublicView.js";
+import KonyvPublicView from "../Public/KonyvPublicView.js";
 
 class KonyvekPublicView
 {
     constructor(tomb, szuloElem)
     {
-        console.log("KonyvekPublicView");
+        // console.log("KonyvekPublicView");
         szuloElem.html(`
         <h1>Könyvek</h1>
         <div id="foTarolo">
